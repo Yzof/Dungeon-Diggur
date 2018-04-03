@@ -18,6 +18,7 @@ class Api::SessionsController < ApplicationController
   end
 
   def delete
-
+    sign_out
+    render json: {}
   end
 end
