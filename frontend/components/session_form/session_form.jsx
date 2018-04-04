@@ -15,7 +15,7 @@ class SessionForm extends React.Component {
   update(type) {
     return e => (this.setState({
       [type]: e.target.value
-    }))
+    }));
   }
 
   handleSubmit(e) {
@@ -24,18 +24,20 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  renderErrors() (
+  renderErrors() {
+    return (
     <ul>
       {this.props.errors.map((error, i) => (
         <li key={`error-${i}`}> error} </li>
       ))}
     </ul>
-  )
+    );
+  }
 
-  render() (
+  render() {
+    return (
     <div className="session-form-container">
       <form className="session-form-box" onSubmit={this.handleSubmit}>
-        <h1>Dungeon Diggur</h1>
         <br />
         Please {this.props.formType} or {this.props.navLink}
         {this.renderErrors()}
@@ -45,14 +47,14 @@ class SessionForm extends React.Component {
             <input
               type="text"
               value={this.state.username}
-              onChange={this.update{"username"}}/>
+              onChange={this.update("username")}/>
           </label>
 
           <label>Password:
             <input
               type="password"
               value={this.state.password}
-              onChange={this.update{"password"}}/>
+              onChange={this.update("password")}/>
           </label>
 
           <br />
@@ -61,7 +63,8 @@ class SessionForm extends React.Component {
         </div>
       </form>
     </div>
-  )
+    );
+  }
 }
 
 export default withRouter(SessionForm);
