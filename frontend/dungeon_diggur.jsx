@@ -1,13 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import * as ApiUtil from './util/session_api_util';
+import * as action from './actions/session_actions';
+import configureStore from './store/store';
 
 document.addEventListener("DOMContentLoaded", () => {
   window.sampleUser = {username: "jeff", password:"password"};
   const root = document.getElementById("root");
-  window.login = ApiUtil.login;
-  window.signup = ApiUtil.signup;
-  window.logout = ApiUtil.logout;
-  window.fetchUser = ApiUtil.fetchUser;
+  const store = configureStore();
+
+  window.store = store;
+  window.login = action.login;
+  window.signup = action.signup;
+  window.logout = action.logout;
   ReactDOM.render(<h1>Hello World</h1>, root);
 });
