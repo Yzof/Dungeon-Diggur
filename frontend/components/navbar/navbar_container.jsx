@@ -7,8 +7,8 @@ import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   user: state.session.currentUser,
-  signupLink: <Link to="/signup" className="signup-navbar-button">Sign Up</Link>,
-  loginLink: <Link to="/login" className="login-navbar-button">Login</Link>
+  signupLink: <Link to="/signup" className="navbar-button">Sign Up</Link>,
+  loginLink: <Link to="/login" className="navbar-button">Login</Link>
 });
 
 const mapDispatchToProps = dispatch => ({
