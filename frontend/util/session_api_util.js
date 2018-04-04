@@ -11,11 +11,11 @@ export const signup = (user) => (
     data: { user }
   })
 );
-export const login = (userCredentials) => (
+export const login = (user) => (
   $.ajax({
     url: "/api/session",
     method: "POST",
-    data: { userCredentials }
+    data: { user }
   })
 );
 export const logout = () => (
