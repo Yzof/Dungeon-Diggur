@@ -1,24 +1,76 @@
 // Place all the styles related to the StaticPages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
 }
 
-main {
-
+body {
+  background-color: #141518;
+  font-family: 'Open Sans',sans-serif;
 }
 
 header {
+  position: absolute;
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
   align-items: center;
+  background-color: #34373c;
+  height: 50px;
+  width: 100%;
 }
 
 .header-link {
+  display: block;
   justify-content: start;
+  font-weight: 900;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  width: 100px;
 }
 
-.navbar-button {
-  justify-content: end;
+.header-link :hover{
+  background-color: #50545c;
+  border-radius: 15px;
+}
+
+.nav-buttons{
+  display: flex;
+}
+
+#signup-navbar-button{
+  margin-left: 10px;
+  color: white;
+  padding: 2px 6px 2px 6px;
+}
+
+#signup-navbar-button:hover {
+  background-color: #50545c;
+  border-radius: 15px;
+}
+
+#login-navbar-button{
+  color: white;
+  padding: 2px 6px 2px 6px;
+}
+
+#login-navbar-button:hover {
+  background-color: #50545c;
+  border-radius: 15px;
 }

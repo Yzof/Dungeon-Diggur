@@ -3,9 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 class NavBar extends React.Component {
-  componentDidMount() {
-    console.log(this.props.user);
-  }
 
   render() {
     const { user, loginLink, signupLink, logout } = this.props;
@@ -18,7 +15,10 @@ class NavBar extends React.Component {
           user ? (
             [user.username, <button onClick={() => logout()}>LogOut</button>]
           ) : (
-            [loginLink, signupLink]
+            <div id="nav-buttons">
+              {loginLink}
+              {signupLink}
+            </div>
           )
         }
 
