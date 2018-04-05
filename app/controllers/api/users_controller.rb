@@ -9,6 +9,19 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find_by_credentials(
+      username: user_params[:username],
+      password: user_params[:password]
+      );
+
+    if @user
+      render json: :show
+    else
+      render json: ["User not Found"], status: 404
+    end
+  end
+
   private
 
   def user_params

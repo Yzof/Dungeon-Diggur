@@ -1,2 +1,0 @@
-class GalleryController < ApplicationController
-end
