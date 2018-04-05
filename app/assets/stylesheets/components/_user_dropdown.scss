@@ -1,0 +1,29 @@
+#user-dropdown-button {
+  color: white;
+  padding: 10px 15px 10px 15px;
+}
+
+#user-dropdown-button:hover {
+  cursor: pointer;
+  background-color: #50545c;
+  border-radius: 15px;
+}
+
+.user-dropdown{
+  position: absolute;
+  width: 160px;
+  right: 445px;
+  background-color: #efefef;
+  color: #121211;
+  border-top: 3px solid #1bb76e;
+  transition: all 0s .3s;
+  z-index: 1;
+
+  li {
+    padding: 10px 18px;
+  }
+
+  li:hover {
+    background-color: #ddd;
+  }
+}
