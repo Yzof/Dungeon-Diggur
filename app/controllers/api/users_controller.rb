@@ -10,13 +10,10 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_credentials(
-      username: user_params[:username],
-      password: user_params[:password]
-      );
+    @user = User.find(params[:id]);
 
     if @user
-      render json: :show
+      render "api/users/show"
     else
       render json: ["User not Found"], status: 404
     end

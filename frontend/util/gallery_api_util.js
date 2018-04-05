@@ -1,6 +1,6 @@
 export const fetchGallery = (id) => (
   $.ajax({
-    url: `/api/users/2/galleries/${id}`,
+    url: `/api/galleries/${id}`,
     method: "GET"
   })
 );
@@ -14,7 +14,7 @@ export const fetchGalleries = () => (
 
 export const createGallery = (gallery) => (
   $.ajax({
-    url: `/api/users/:user_id/galleries/${gallery.id}`,
+    url: `/api/galleries/${gallery.id}`,
     method: "POST",
     data: { gallery }
   })
@@ -22,7 +22,7 @@ export const createGallery = (gallery) => (
 
 export const editGallery = (gallery) => (
   $.ajax({
-    url: `/api/users/:user_id/galleries/${gallery.id}`,
+    url: `/api/galleries/${gallery.id}`,
     method: "PATCH",
     data: { gallery }
   })
@@ -30,7 +30,7 @@ export const editGallery = (gallery) => (
 
 export const deleteGallery = (id) => (
   $.ajax({
-    url: `/api/users/:user_id/galleries/${id}`,
+    url: `/api/galleries/${id}`,
     method: "DELETE"
   })
 );

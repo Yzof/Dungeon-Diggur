@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import * as APIUtil from './util/gallery_api_util';
+import * as APIUtil from './util/session_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
   window.sampleUser = {username: "jeff", password:"password"};
@@ -16,8 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ------------------ TEST ------------------ */
-  window.fetchGalleries = APIUtil.fetchGalleries;
-  window.fetchGallery = APIUtil.fetchGallery;
+  window.fetchUser = APIUtil.fetchUser;
   /* ------------------ TEST ------------------ */
 
   window.store = store;
