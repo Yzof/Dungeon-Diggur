@@ -5,7 +5,7 @@ class Api::UsersController < ApplicationController
     if @user.save
       render :show
     else
-      render ['Invalid Username or Password'], status: 422
+      render json: ['Invalid Username or Password'], status: 422
     end
   end
 

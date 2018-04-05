@@ -15,10 +15,10 @@
   background: #2C2F34;
   color: white;
   width: 320px;
-  height: 74px;
   padding: 15px 15px;
   border-radius: 10px;
   margin-bottom: 10px;
+  box-shadow: 2px 2px 9px 3px rgba(0,0,0,.2);
 }
 
 .session-input {
@@ -37,8 +37,12 @@
 
 .return-link {
   float: left;
-  color: white;
+  color: #e9e7e7;
   font-weight: 400;
+}
+
+.return-link:hover {
+  color: white;
 }
 
 .session-submit {
