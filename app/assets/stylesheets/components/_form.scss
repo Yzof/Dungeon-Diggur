@@ -1,0 +1,65 @@
+.session-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 620px;
+    margin: auto;
+}
+
+.session-form-box {
+
+}
+
+.session-form {
+  background: #2C2F34;
+  color: white;
+  width: 320px;
+  height: 74px;
+  padding: 15px 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.session-input {
+  width: 100%;
+  display: block;
+  height: 32px;
+  box-shadow: inset 0 2px 2px rgba(0,0,0,.1);
+  background-color: #191919;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+}
+
+.session-input:focus {
+  border: 1px solid #1bb76e;
+}
+
+.return-link {
+  float: left;
+  color: white;
+  font-weight: 400;
+}
+
+.session-submit {
+  color: white;
+  display: inline-block;
+  vertical-align: baseline;
+  margin-right: 10px;
+  float: right;
+  border-radius: 5px;
+}
+
+#submit-button {
+  padding: 10px 25px 10px 25px;
+  background-color: #5c69ff;
+  border: none;
+}
+
+#session-logo {
+  color: white;
+  font-weight: 900;
+  text-align: center;
+  font-size: 50px;
+  margin: 0 auto 90px;
+}

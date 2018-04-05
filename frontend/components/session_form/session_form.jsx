@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props){
@@ -36,32 +36,36 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-    <div className="session-form-container">
-      <form className="session-form-box" onSubmit={this.handleSubmit}>
-        <br />
-        Please {this.props.formType} or {this.props.navLink}
-        {this.renderErrors()}
-        <div className="session-form">
-          <br />
-          <label>Username:
-            <input
-              type="text"
-              value={this.state.username}
-              onChange={this.update("username")}/>
-          </label>
+    <div>
+      <Link to='/' className='return-link'>Take Me Home</Link>
+      <div className="session-form-container">
+        <form className="session-form-box" onSubmit={this.handleSubmit}>
+          <h1 id="session-logo">Dungeon Diggur</h1>
 
-          <label>Password:
-            <input
-              type="password"
-              value={this.state.password}
-              onChange={this.update("password")}/>
-          </label>
+          {this.renderErrors()}
+          <div className="session-form">
 
-          <br />
+              <input
+                className='session-input'
+                placeholder='Username'
+                type="text"
+                value={this.state.username}
+                onChange={this.update("username")}
+              />
 
-          <input className="session-submit" type='submit' value={this.props.formType}/>
-        </div>
-      </form>
+              <input
+                className='session-input'
+                placeholder='Password'
+                type="password"
+                value={this.state.password}
+                onChange={this.update("password")}
+              />
+
+          </div>
+          <input className="session-submit" id='submit-button' type='submit' value={this.props.formType}/>
+          {this.props.navLink}
+        </form>
+      </div>
     </div>
     );
   }
