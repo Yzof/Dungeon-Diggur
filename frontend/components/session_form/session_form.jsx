@@ -10,12 +10,22 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(type) {
     return e => (this.setState({
       [type]: e.target.value
     }));
+  }
+
+  demoLogin() {
+    console.log("hello");
+    this.setState({
+      username: "Demo",
+      password: "password"
+    });
+    this.handleSubmit();
   }
 
   handleSubmit(e) {
@@ -35,6 +45,10 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    let demo = "";
+    if (this.props.formType === "Login") {
+      demo = <button className="submit-button demo" onClick={this.demoLogin}>Demo User</button>;
+    }
     return (
     <div>
       <Link to='/' className='return-link'>Take Me Home</Link>
@@ -62,7 +76,8 @@ class SessionForm extends React.Component {
               />
 
           </div>
-          <input className="session-submit" id='submit-button' type='submit' value={this.props.formType}/>
+          <input className="session-submit submit-button" type='submit' value={this.props.formType}/>
+          {demo}
           {this.props.navLink}
         </form>
       </div>
