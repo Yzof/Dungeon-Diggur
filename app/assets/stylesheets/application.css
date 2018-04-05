@@ -13,6 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-@import "components/navbar.scss";
-@import "components/base.scss";
