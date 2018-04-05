@@ -1,0 +1,15 @@
+.hidden {
+	display: none;
+}
+
+/*
+	Images
+*/
+
+.thumbnail {
+	height: 100px;
+}
+
+.thumbnail img {
+	object-fit: cover;
+}

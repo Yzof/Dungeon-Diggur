@@ -7,11 +7,11 @@ class UserDropdown extends React.Component {
     return (
       <div className="account-username">
         <p id="user-dropdown-button">{user.username}</p>
-        <div className="user-dropdown">
+        <div className="user-dropdown hidden">
           <ul className="user-dropdown-options">
             <li>Profile TODO</li>
             <li>Galleries TODO</li>
-            <li className="dropdown-logout"><button onClick={() => logout()}>LogOut</button></li>
+            <li><button className="dropdown-logout" onClick={() => logout()}>LogOut</button></li>
           </ul>
         </div>
       </div>
