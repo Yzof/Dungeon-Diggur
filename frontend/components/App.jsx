@@ -11,16 +11,13 @@ import {
   HashRouter
 } from 'react-router-dom';
 
-
 const App = () => {
   return (
   <div>
-    <NavBarContainer />
-
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer}/>
       <AuthRoute exact path="/signup" component={SignUpFormContainer}/>
-      <Route path="/"/>
+      <Route path="/" component={NavBarContainer}/>
     </Switch>
   </div>
 );
