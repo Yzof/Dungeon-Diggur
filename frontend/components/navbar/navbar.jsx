@@ -1,11 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import UserDropdownContainer from '../user_dropdown/user_dropdown_container';
 
 class NavBar extends React.Component {
 
   render() {
-    const { user, loginLink, signupLink, logout } = this.props;
+    const { user, loginLink, signupLink } = this.props;
     return (
       <header>
           <Link to="/" className="header-link">
@@ -13,7 +14,7 @@ class NavBar extends React.Component {
           </Link>
         {
           user ? (
-            [user.username, <button onClick={() => logout()}>LogOut</button>]
+            <UserDropdownContainer user={user} />
           ) : (
             <div id="nav-buttons">
               {loginLink}

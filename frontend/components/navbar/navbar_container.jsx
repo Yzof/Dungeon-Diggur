@@ -2,8 +2,6 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from './navbar';
-import { logout } from '../../actions/session_actions';
-
 
 const mapStateToProps = (state, ownProps) => ({
   user: state.session.currentUser,
@@ -11,8 +9,5 @@ const mapStateToProps = (state, ownProps) => ({
   loginLink: <Link to="/login" id="login-navbar-button">Login</Link>
 });
 
-const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
-});
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
+export default connect(mapStateToProps,null)(NavBar);
