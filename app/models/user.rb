@@ -8,6 +8,7 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  biography       :text
 #
 
 class User < ApplicationRecord
@@ -20,6 +21,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   attr_reader :password
+  attr_accessor :biography
 
   def reset_session_token!
     self.session_token = SecureRandom.urlsafe_base64
