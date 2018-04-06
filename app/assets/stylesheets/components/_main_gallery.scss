@@ -1,0 +1,31 @@
+.main-gallery-container {
+  display: flex;
+  flex-direction: row;
+  width: 1000px;
+  margin: auto;
+  padding: 200px 0px;
+}
+
+.main-gallery {
+  background-color: #2C2F34;
+  border-radius: 5px;
+  display: flex;
+  width: 100%;
+  padding: 21px 21px;
+  justify-content: space-between;
+  box-shadow: 0 0 11px 1px #111;
+}
+
+.main-galery-item {
+  background-color: white;
+  border: 2px solid #444442;
+  display: inline-flex;
+  width: 180px;
+  height: 180px;
+  outline: #121211 solid 1px;
+  outline-offset: -3px;
+}
+
+.main-galery-item:hover {
+  border: 2px solid  #50545c;
+}
