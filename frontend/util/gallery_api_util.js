@@ -14,16 +14,8 @@ export const fetchGalleries = () => (
 
 export const createGallery = (gallery) => (
   $.ajax({
-    url: `/api/galleries/${gallery.id}`,
+    url: `/api/galleries`,
     method: "POST",
-    data: { gallery }
-  })
-);
-
-export const editGallery = (gallery) => (
-  $.ajax({
-    url: `/api/galleries/${gallery.id}`,
-    method: "PATCH",
     data: { gallery }
   })
 );
