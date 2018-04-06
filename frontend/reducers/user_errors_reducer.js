@@ -1,21 +1,21 @@
 import merge from 'lodash/merge';
 import {
   RECEIVE_ERRORS,
-  RECEIVE_GALLERY
-} from "../actions/gallery_actions";
+  RECEIVE_USER
+} from "../actions/user_actions";
 
-const galleryErrorsReducer = (oldState = [], action) => {
+const userErrorsReducer = (oldState = [], action) => {
   Object.freeze(oldState);
 
   switch (action.type) {
     case RECEIVE_ERRORS:
       const response = action.errors.responseJSON || [];
       return response;
-    case RECEIVE_GALLERY:
+    case RECEIVE_USER:
       return [];
     default:
       return oldState;
   }
 };
 
-export default galleryErrorsReducer;
+export default userErrorsReducer;
