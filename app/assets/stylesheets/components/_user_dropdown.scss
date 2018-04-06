@@ -19,11 +19,14 @@
   transition: all 0s .3s;
   z-index: 1;
 
-  li {
-    padding: 10px 18px;
-  }
 
-  li:hover {
-    background-color: #ddd;
-  }
+}
+
+.user-dropdown-item {
+  padding: 10px 18px;
+}
+
+.user-dropdown-item:hover {
+  background-color: #ddd;
+  cursor: pointer;
 }
