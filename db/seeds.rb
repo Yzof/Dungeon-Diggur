@@ -10,3 +10,7 @@ demoUser = User.create(username: "Demo", password:"password")
 user1 = User.create(username: "Dungeon-Master", password:"password")
 user2 = User.create(username: "Player-Hater", password:"password")
 user3 = User.create(username: "Goblin", password:"password")
+
+gallery1 = Gallery.create(author_id: 1)
+gallery2 = Gallery.create(author_id: 2)
+gallery3 = Gallery.create(author_id: 3)

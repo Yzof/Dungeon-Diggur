@@ -1,0 +1,22 @@
+.missing-container {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 200px;
+}
+
+.not-found {
+  font-size: 100px;
+  color: white;
+  margin: auto;
+}
+
+.missing-return-link {
+  color: white;
+  padding: 10px 25px 10px 25px;
+  background-color: #5c69ff;
+  border: none;
+  border-radius: 5px;
+}

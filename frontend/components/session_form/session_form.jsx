@@ -13,6 +13,14 @@ class SessionForm extends React.Component {
     this.demoLogin = this.demoLogin.bind(this);
   }
 
+  componentDidMount() {
+    $('nav').addClass('hidden');
+  }
+
+  componentWillUnmount() {
+    $('nav').removeClass('hidden');
+  }
+
   update(type) {
     return e => (this.setState({
       [type]: e.target.value
