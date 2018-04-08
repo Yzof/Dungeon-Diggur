@@ -1,0 +1,23 @@
+.content {
+  display: flex;
+  width: 1000px;
+  margin: auto;
+}
+
+.content-left {
+  float: left;
+  padding-top: 200px;
+}
+
+.display-container {
+
+}
+
+.content-right {
+  float: right;
+  margin: auto;
+}
+
+.shrink {
+  width: 640px !important;
+}

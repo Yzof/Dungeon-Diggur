@@ -1,4 +1,6 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
 
 class UserDropdown extends React.Component {
   constructor(props) {
@@ -32,7 +34,10 @@ class UserDropdown extends React.Component {
           >{user.username}</p>
         <div className="user-dropdown hidden">
           <ul className="user-dropdown-options">
-            <li className="user-dropdown-item">Profile TODO</li>
+            <li className="user-dropdown-item"
+                onClick={() => this.props.history.push(`user/${user.id}`)}>
+              Profile
+            </li>
             <li className="user-dropdown-item">Galleries TODO</li>
             <li className="user-dropdown-item" onClick={() => logout()}>
               <button className="dropdown-logout">LogOut</button>
@@ -44,4 +49,4 @@ class UserDropdown extends React.Component {
   }
 }
 
-export default UserDropdown;
+export default withRouter(UserDropdown);

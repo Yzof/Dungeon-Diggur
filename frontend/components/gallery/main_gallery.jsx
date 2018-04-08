@@ -11,7 +11,7 @@ class MainGallery extends React.Component {
       gallery => <GalleryIndexItem key={`gallery-index-${gallery.id}`} gallery={gallery} />
     );
     return (
-      <div className="main-gallery-container">
+      <div className="main-gallery-container" id="main">
         <ul className="main-gallery">
           {galleryItems}
         </ul>

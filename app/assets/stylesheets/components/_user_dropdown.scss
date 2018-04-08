@@ -12,14 +12,12 @@
 .user-dropdown{
   position: absolute;
   width: 160px;
-  right: 445px;
+  right: 9px;
   background-color: #efefef;
   color: #121211;
   border-top: 3px solid #1bb76e;
   transition: all 0s .3s;
   z-index: 1;
-
-
 }
 
 .user-dropdown-item {
@@ -29,4 +27,9 @@
 .user-dropdown-item:hover {
   background-color: #ddd;
   cursor: pointer;
+}
+
+.account-username {
+  position: relative;
+  display: inline-block;
 }

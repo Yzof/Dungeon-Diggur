@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Display from './display';
+import MainDisplay from './display';
 import { fetchUser } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,4 +13,4 @@ const mapDispatchToProps = dispatch => ({
   fetchUser: (id) => dispatch(fetchUser(id)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Display);
+export default connect(mapStateToProps, mapDispatchToProps)(MainDisplay);

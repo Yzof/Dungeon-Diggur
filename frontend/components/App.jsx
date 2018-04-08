@@ -4,7 +4,7 @@ import LogInFormContainer from './session_form/login_form_container';
 import NavBarContainer from './navbar/navbar_container';
 import MainGalleryContainer from './gallery/main_gallery_container';
 import MissingContainer from './fourofour/missing_container';
-import DisplayContainer from './user/display_container';
+import MainDisplayContainer from './user/display_container';
 import { AuthRoute, ProtectedRoute } from '../util/root_util';
 import {
   Route,
@@ -24,7 +24,7 @@ const App = () => {
     <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer}/>
       <AuthRoute exact path="/signup" component={SignUpFormContainer}/>
-      <Route path="/user/:user_id" component={DisplayContainer}/>
+      <Route path="/user/:user_id" component={MainDisplayContainer}/>
       <Route exact path="/" component={MainGalleryContainer}/>
       <Route path="/" component={MissingContainer}/>
     </Switch>
