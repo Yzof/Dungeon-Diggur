@@ -9,9 +9,10 @@
 #  updated_at :datetime         not null
 #
 
-class Asset < ApplicationRecord
-  validates :gallery_id, presence: true
+require 'test_helper'
 
-  belongs_to :gallery,  class_name: "Gallery",
-                        foreign_key: :gallery_id
+class AssetTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end
