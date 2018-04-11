@@ -10,12 +10,26 @@
 }
 
 .display-container {
+  background-color: #2c2f34;
+  color: #f2f2f2;
+  padding: 20px;
+  width: 300px;
+  height: 400px;
+  overflow: auto;
+  box-shadow: 0 0 11px 1px #111;
+  border-radius: 5px;
+}
 
+.display-title {
+  padding-bottom: 10px;
+  text-align: center;
 }
 
 .content-right {
   float: right;
   margin: auto;
+  padding-left: 20px;
+  margin-top: 200px;
 }
 
 .shrink {

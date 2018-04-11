@@ -35,10 +35,9 @@ class UserDropdown extends React.Component {
         <div className="user-dropdown hidden">
           <ul className="user-dropdown-options">
             <li className="user-dropdown-item"
-                onClick={() => this.props.history.push(`user/${user.id}`)}>
+                onClick={() => this.props.history.push(`/user/${user.id}`)}>
               Profile
             </li>
-            <li className="user-dropdown-item">Galleries TODO</li>
             <li className="user-dropdown-item" onClick={() => logout()}>
               <button className="dropdown-logout">LogOut</button>
             </li>

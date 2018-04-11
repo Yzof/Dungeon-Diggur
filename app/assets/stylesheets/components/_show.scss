@@ -1,0 +1,39 @@
+.gallery-list-item {
+
+}
+
+.gallery-show-title {
+  width: 688px;
+  background-color: #2c2f34;
+  color: #f2f2f2;
+  border-bottom: 1px solid black;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  box-shadow: 0 4px 4px -2px rgba(0,0,0,.2);
+  border-radius: 3px 3px 0 0;
+}
+
+.gallery-show-description {
+  width: 688px;
+  background-color: #2c2f34;
+  padding: 20px;
+  min-height: 59px;
+}
+
+.gallery-list-container {
+  background-color: #26292d;
+  width: 728px;
+}
+
+.gallery-show-main-gallery {
+  width: 300px;
+  height: 400px;
+  overflow: auto;
+}
+
+.gallery-form-container {
+  width: 1000px;
+  margin: auto;
+  padding-top: 100px;
+}

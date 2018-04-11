@@ -2,13 +2,15 @@ import React from 'react';
 import GalleryIndexItem from "./gallery_index_item";
 
 class MainGallery extends React.Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchGalleries();
   }
 
   render(){
     const galleryItems = this.props.galleries.map(
-      gallery => <GalleryIndexItem key={`gallery-index-${gallery.id}`} gallery={gallery} />
+      (gallery) => (
+        gallery.assets[0] ? <GalleryIndexItem key={`gallery-index-item-${gallery.id}`} gallery={gallery} /> : null
+    )
     );
     return (
       <div className="main-gallery-container" id="main">

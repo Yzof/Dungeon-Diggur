@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import UserDropdownContainer from '../user_dropdown/user_dropdown_container';
+import UploadButtonContainer from './upload_button_container';
 
 class NavBar extends React.Component {
 
@@ -14,7 +15,10 @@ class NavBar extends React.Component {
           </Link>
         {
           user ? (
-            <UserDropdownContainer user={user} />
+            <div className="logged-links">
+              <UploadButtonContainer />
+              <UserDropdownContainer user={user} />
+            </div>
           ) : (
             <div id="nav-buttons">
               {loginLink}

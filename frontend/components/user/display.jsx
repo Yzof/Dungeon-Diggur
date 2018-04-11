@@ -2,7 +2,6 @@ import React from 'react';
 import MainGalleryContainer from '../gallery/main_gallery_container';
 import GalleryIndexItem from '../gallery/gallery_index_item';
 import UserBioContainer from './user_bio_container';
-import SidebarSelector from './sidebar_selector';
 
 class MainDisplay extends React.Component {
   constructor(props) {
@@ -32,10 +31,8 @@ class MainDisplay extends React.Component {
     return (
       <div className="content">
         <div className="content-left">
-          <div id="selected-display-container">
-            //todo check file for instructions
-          </div>
           <div className="display-container">
+            <h1 className="display-title">Users Galleries</h1>
             <ul>
               {galleryItems}
             </ul>
@@ -43,7 +40,6 @@ class MainDisplay extends React.Component {
           <MainGalleryContainer />
         </div>
         <div className="content-right">
-          {<SidebarSelector />}
           {UserBio}
         </div>
       </div>
