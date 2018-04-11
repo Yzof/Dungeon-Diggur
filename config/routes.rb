@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     end
     resources :galleries, except: [:new, :update]
     resource :session, only: [:create, :destroy]
+    resources :assets
   end
 
   root "static_pages#root"

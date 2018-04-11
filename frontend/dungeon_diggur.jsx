@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import * as userActions from './actions/user_actions';
-import { fetchUser } from './util/user_api_util';
+import { fetchGallery } from './actions/gallery_actions';
+import { uploadImage, fetchAssets } from './util/asset_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -16,10 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* ------------------ TEST ------------------ */
-  window.sampleGallery = {id:4, author_id: 1};
   window.store = store;
-  window.fetchUserAction = userActions.fetchUser;
-  window.fetchUser = fetchUser;
+  window.sampleGallery = {title:"wow", description:"who", author_id: 1};
+  window.fetchGallery = fetchGallery;
+  window.uploadImage = uploadImage;
+  window.fetchAssets = fetchAssets;
   window.dispatch = store.dispatch;
   /* ------------------ TEST ------------------ */
 

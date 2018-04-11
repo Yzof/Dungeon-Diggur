@@ -16,6 +16,5 @@ class Gallery < ApplicationRecord
   belongs_to :author, class_name: "User",
                       foreign_key: :author_id
 
-  
-
+  has_many :assets, foreign_key: :gallery_id, dependent: :destroy
 end

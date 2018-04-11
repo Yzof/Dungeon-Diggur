@@ -4,17 +4,17 @@ export const RECEIVE_ALL_GALLERIES = "RECEIVE_ALL_GALLERIES";
 export const RECEIVE_GALLERY = "RECEIVE_GALLERY";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 
-const receiveAllGalleries = ({galleries}) => ({
+export const receiveAllGalleries = ({galleries}) => ({
   type: RECEIVE_ALL_GALLERIES,
   galleries
 });
 
-const receiveGallery = (gallery) => ({
+export const receiveGallery = (gallery) => ({
   type: RECEIVE_GALLERY,
   gallery
 });
 
-const receiveErrors = (errors) => ({
+export const receiveErrors = (errors) => ({
   type: RECEIVE_ERRORS,
   errors
 });
