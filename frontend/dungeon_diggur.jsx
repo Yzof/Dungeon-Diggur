@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { fetchGallery } from './actions/gallery_actions';
+import { fetchGallery, editGallery } from './actions/gallery_actions';
 import { uploadImage, fetchAssets } from './util/asset_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.store = store;
   window.sampleGallery = {title:"wow", description:"who", author_id: 1};
   window.fetchGallery = fetchGallery;
+  window.editGallery = editGallery;
   window.uploadImage = uploadImage;
   window.fetchAssets = fetchAssets;
   window.dispatch = store.dispatch;

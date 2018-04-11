@@ -31,7 +31,6 @@ class GalleryForm extends React.Component {
       },
       (error, results) => {
         if(!error){
-          debugger;
           this.props.uploadImage(
             {path: results[0].url, gallery_id: this.state.id}
           );
@@ -41,7 +40,10 @@ class GalleryForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.editGallery(this.state);
+    this.props.editGallery(this.state).then(
+      ({ gallery }) => this.props.history.push(`/galleries/${gallery.id}`)
+    );
+
   }
 
   render() {
@@ -86,7 +88,7 @@ class GalleryForm extends React.Component {
             className="gallery-form-description gallery-form-input"
             placeholder="Please Describe your Gallery!"
           />
-          <button value={this.props.formType} className="upload-button gallery-form-submit">
+        <button type="submit" value={this.props.formType} className="upload-button gallery-form-submit">
             {this.props.formType}
           </button>
       </form>
