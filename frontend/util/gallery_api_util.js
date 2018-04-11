@@ -20,6 +20,14 @@ export const createGallery = (gallery) => (
   })
 );
 
+export const editGallery = (gallery) => (
+  $.ajax({
+    url: `/api/galleries/${gallery.id}`,
+    method: "PATCH",
+    data: { gallery }
+  })
+);
+
 export const deleteGallery = (id) => (
   $.ajax({
     url: `/api/galleries/${id}`,

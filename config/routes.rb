@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show] do
       resources :galleries, only: [:create]
     end
-    resources :galleries, except: [:new, :update]
+    resources :galleries, except: [:new]
     resource :session, only: [:create, :destroy]
     resources :assets
   end

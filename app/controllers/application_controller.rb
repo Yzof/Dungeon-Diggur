@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :signed_in?, :sign_in, :sign_out
+  helper_method :current_user, :signed_in?, :sign_in, :sign_out, :auth
 
   def current_user
     return nil unless session[:session_token]
@@ -20,6 +20,14 @@ class ApplicationController < ActionController::Base
     current_user.reset_session_token!
     session[:session_token] = nil
     @current_user = nil
+  end
+
+  def auth
+    {
+      cloud_name: dkk7qjv7c,
+      api_key: '499866761334525',
+      api_secret: G2OgkVTeeJGjkn6cNo6a9U7TYG0
+    }
   end
 
 end

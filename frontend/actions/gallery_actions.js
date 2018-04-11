@@ -40,6 +40,12 @@ export const createGallery = (gallery) => dispatch => (
   )
 );
 
+export const editGallery = (gallery) => dispatch => (
+  APIUtil.editGallery(gallery).then(
+    (updatedGallery) => dispatch(receiveGallery(updatedGallery))
+  )
+);
+
 export const deleteGallery = (id) => dispatch => (
   APIUtil.deleteGallery(id).then(
     (errors) => dispatch(receiveErrors(errors))

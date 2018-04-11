@@ -19,6 +19,17 @@ class Api::GalleriesController < ApplicationController
     end
   end
 
+  def update
+    @gallery = Gallery.find(params[:id])
+
+    if @gallery
+      @gallery.update(gallery_params)
+      render "api/gallery/show"
+    else
+      render json: @gallery.errors.full_messages, status: 422
+    end
+  end
+
   def destroy
     @gallery = Gallery.find(params[:id])
     @gallery.destroy
@@ -27,6 +38,6 @@ class Api::GalleriesController < ApplicationController
   private
 
   def gallery_params
-    params.require("gallery").permit(:author_id)
+    params.require("gallery").permit(:author_id, :title, :description)
   end
 end
