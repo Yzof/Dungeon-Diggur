@@ -17,7 +17,7 @@ export const uploadImage = (asset) => {
   return (
     $.ajax({
       method: 'POST',
-      url: 'api/assets',
+      url: '/api/assets',
       data: { asset }
     })
   );

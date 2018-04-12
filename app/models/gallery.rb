@@ -21,4 +21,5 @@ class Gallery < ApplicationRecord
                       foreign_key: :author_id
 
   has_many :assets, foreign_key: :gallery_id, dependent: :destroy
+  has_many :votes, as: :voteable, dependent: :destroy
 end

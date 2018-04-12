@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import MainGalleryContainer from './main_gallery_container';
+import VoteContainer from '../vote/vote_container';
+import TagsContainer from '../tags/tags_container';
 
 class GalleryShow extends React.Component {
   constructor(props) {
     super(props);
+    this.nextGallery = this.nextGallery.bind(this);
+    this.prevGallery = this.prevGallery.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -21,6 +25,29 @@ class GalleryShow extends React.Component {
   componentWillUnmount() {
     $('#main').addClass("main-gallery-container");
     $('#main').removeClass("gallery-show-main-gallery");
+  }
+
+
+  nextGallery(e) {
+    e.preventDefault();
+    let nextId = this.props.gallery.id + 1;
+
+    if (nextId <= this.props.galleries.length) {
+      this.props.history.push(`/galleries/${nextId}`);
+    } else {
+      this.props.history.push(`/galleries/${1}`);
+    }
+  }
+
+  prevGallery(e) {
+    e.preventDefault();
+    let prevId = this.props.gallery.id -1;
+    let last = this.props.galleries.length - 1;
+    if (prevId > 0) {
+      this.props.history.push(`/galleries/${prevId}`);
+    } else {
+      this.props.history.push(`/galleries/${this.props.galleries[last].id}`);
+    }
   }
 
   render() {
@@ -46,15 +73,34 @@ class GalleryShow extends React.Component {
     return (
       <div className="content">
         <div className="content-left">
-          <h1
-            className="gallery-show-title"
-            key={`title-${this.props.gallery.id}`}
-            >{this.props.gallery.title}
-          </h1>
+          <div className="gallery-show-title">
+            <h1
+              key={`title-${this.props.gallery.id}`}
+              >{this.props.gallery.title}
+            </h1>
+            <div>
+              <button
+                className="gallery-select-button left-button"
+                onClick={this.prevGallery}
+                >&larr;
+              </button>
+              <button
+                className="gallery-select-button right-button"
+                onClick={this.nextGallery}
+                >&rarr;
+              </button>
+            </div>
+          </div>
           <ul className="gallery-list-container">
             {galleryImages}
           </ul>
-          <p className="gallery-show-description">{this.props.gallery.description}</p>
+          <div className="gallery-show-description">
+            <div className="gallery-show-details">
+              <VoteContainer />
+              <TagsContainer />
+            </div>
+            <p>{this.props.gallery.description}</p>
+          </div>
         </div>
         <div className="content-right">
           <MainGalleryContainer />

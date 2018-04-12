@@ -25,7 +25,14 @@ gallery3 = Gallery.create(
   author_id: 3,
   title:"Dragons of Despair",
   description:"Setting for the DragonLance books"
-)
+ )
+
+vote1 = Vote.create(user_id: 2, vote_type: 0, voteable_type: "Gallery", voteable_id:1)
+vote2 = Vote.create(user_id: 2, vote_type: 0, voteable_type: "Gallery", voteable_id:2)
+vote3 = Vote.create(user_id: 3, vote_type: 1, voteable_type: "Gallery", voteable_id:3)
+vote4 = Vote.create(user_id: 3, vote_type: 0, voteable_type: "Gallery", voteable_id:1)
+vote5 = Vote.create(user_id: 4, vote_type: 0, voteable_type: "Gallery", voteable_id:2)
+vote6 = Vote.create(user_id: 4, vote_type: 0, voteable_type: "Gallery", voteable_id:3)
 
 asset1 = Asset.create(gallery_id: 1, path: "http://res.cloudinary.com/dkk7qjv7c/image/upload/v1523383878/qzfs4degnx6j2zfuvqzl.png")
 asset2 = Asset.create(gallery_id: 2, path: "http://res.cloudinary.com/dkk7qjv7c/image/upload/v1523396511/rwk8birm44atml05yfnw.png")

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :galleries, except: [:new]
     resource :session, only: [:create, :destroy]
     resources :assets
+    resource :vote, except: [:new]
   end
 
   root "static_pages#root"

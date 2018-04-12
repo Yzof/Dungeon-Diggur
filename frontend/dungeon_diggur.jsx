@@ -2,8 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import { fetchGallery, editGallery } from './actions/gallery_actions';
-import { uploadImage, fetchAssets } from './util/asset_api_util';
+import * as voteActions from './actions/vote_actions';
+import { fetchUser } from './actions/user_actions';
+import * as voteUtil from './util/vote_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -17,11 +18,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ------------------ TEST ------------------ */
   window.store = store;
-  window.sampleGallery = {title:"wow", description:"who", author_id: 1};
-  window.fetchGallery = fetchGallery;
-  window.editGallery = editGallery;
-  window.uploadImage = uploadImage;
-  window.fetchAssets = fetchAssets;
+  window.sampleVote = {vote_type: "down", voteable_id: 3, voteable_type:"Gallery", user_id: 1};
+  window.voteActions = voteActions;
+  window.voteUtil = voteUtil;
+  window.fetchUser = fetchUser;
   window.dispatch = store.dispatch;
   /* ------------------ TEST ------------------ */
 

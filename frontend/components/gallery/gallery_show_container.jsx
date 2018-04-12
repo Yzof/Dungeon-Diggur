@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     user: state.session.currentUser,
     gallery_id: galleryId,
     gallery: state.entities.galleries[galleryId],
+    galleries: Object.keys(state.entities.galleries).map( id => state.entities.galleries[id]),
     formType: "Create"
   };
 

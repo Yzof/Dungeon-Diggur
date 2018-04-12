@@ -17,11 +17,11 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_many :galleries, foreign_key: :author_id
+  has_many :votes, foreign_key: :user_id
 
   after_initialize :ensure_session_token
 
   attr_reader :password
-  attr_accessor :biography
 
   def reset_session_token!
     self.session_token = SecureRandom.urlsafe_base64
