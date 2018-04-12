@@ -4,9 +4,16 @@ import { Link, withRouter } from 'react-router-dom';
 class GalleryForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {title: "", description: ""};
+    this.state = {
+      title: "",
+      description: "",
+      tag_names: [],
+      newTag: ""
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.addImage = this.addImage.bind(this);
+    this.addTag = this.addTag.bind(this);
+    this.removeTag = this.removeTag.bind(this);
   }
 
   componentDidMount() {
@@ -20,6 +27,21 @@ class GalleryForm extends React.Component {
       [type]: e.target.value
     }));
   }
+
+  addTag(e) {
+    e.preventDefault();
+    this.setState({
+      tag_names: [ ...this.state.tag_names, this.state.newTag],
+      newTag: ""
+    });
+  }
+
+  removeTag(idx) {
+    this.setState({
+      tag_names: this.state.tag_names.filter((_, index) => index !== idx)
+    });
+  }
+
 
   addImage(e) {
     e.preventDefault();
@@ -47,8 +69,7 @@ class GalleryForm extends React.Component {
   }
 
   render() {
-    let galleryImages = "";
-
+    let galleryImages, tagNames = "";
     if (this.props.gallery) {
       galleryImages = this.props.gallery.assets.map(
         (asset) => (
@@ -57,6 +78,11 @@ class GalleryForm extends React.Component {
           </li>
         )
       );
+
+      tagNames = this.state.tag_names.map( (tag, idx) => {
+        const clickHandler = () => this.removeTag(idx);
+        return (<li key={idx} onClick={clickHandler}>{tag}</li>);
+      });
     } else {
       return (
         <div className="missing-container">
@@ -82,6 +108,23 @@ class GalleryForm extends React.Component {
             onClick={this.addImage}
             >Add Image
           </button>
+          <ul>
+            {tagNames}
+          </ul>
+          <label>Tags
+            <input
+              className=""
+              onChange={this.updateText("newTag")}
+              placeholder="Enter a New Tag"
+              value={this.state.newTag}
+            />
+            <button
+              className="upload-button gallery-button"
+              type="button"
+              onClick={this.addTag}
+              value="Add Tag"
+            />
+          </label>
           <textarea
             value={this.state.body}
             onChange={this.updateText("body")}

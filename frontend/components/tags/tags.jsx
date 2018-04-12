@@ -1,13 +1,18 @@
 import React from 'react';
 
 class Tags extends React.Component {
+  constructor(props) {
+      super(props);
+  }
+
   render() {
+    let tagIndex = this.props.gallery.tags.map(
+      (tag) => <li key={tag.id} className="gallery-tag" >{tag.name}</li>
+    );
     return(
       <div>
         <ul className="horizontal-li">
-          <li className="gallery-tag">wip</li>
-          <li className="gallery-tag">dungeon</li>
-          <li className="gallery-tag">low-level</li>
+          {tagIndex}
         </ul>
       </div>
     );

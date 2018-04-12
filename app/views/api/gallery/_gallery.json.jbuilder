@@ -8,3 +8,6 @@ json.votes do
   gallery_vote = gallery.votes.select { |vote| vote.user_id == current_user.id }[0]
   json.currentUserVote gallery_vote ? gallery_vote.vote_type : nil
 end
+json.tags gallery.tags.each do |tag|
+  json.partial! 'api/tags/tag', tag: tag
+end

@@ -7,6 +7,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 });
 
+// Need to Select Galleries by tag. 
+
 const mapDispatchToProps = dispatch => ({
 
 });

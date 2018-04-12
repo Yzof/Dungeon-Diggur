@@ -97,7 +97,7 @@ class GalleryShow extends React.Component {
           <div className="gallery-show-description">
             <div className="gallery-show-details">
               <VoteContainer />
-              <TagsContainer />
+              <TagsContainer gallery={this.props.gallery} />
             </div>
             <p>{this.props.gallery.description}</p>
           </div>
