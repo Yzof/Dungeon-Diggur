@@ -9,7 +9,7 @@ Anecdotes aside, this project has had it challenges and triumphs mostly related 
 * PostgreSQL: An open source relational database system
 * BCrypt: A Ruby Gem that handles password digesting and salting
 
-For more information about the details of my implementation for the project's various features visit the wiki(link this m8) or read on for an in-depth look at the core-functionality of Galleries in my website.
+For more information about the details of my implementation for the project's various features visit the [wiki](https://github.com/Yzof/Dungeon-Diggur/wiki) or read on for an in-depth look at the core-functionality of Galleries in my website.
 
 ## Features and implementation
 * Secure Frontend/Backend Login
@@ -20,21 +20,20 @@ For more information about the details of my implementation for the project's va
 ### Account Creation
 An important part of any modern website is the ability to track and store the data your users submit, in a way that respects their privacy and security. Using a hashing gem known as BCrypt, my database in no way stores the actual password in the servers, rather it is momentarily received before the BCrypt gem produces a hashed string that is then stored in the passwords place.
 
---sign up pic
+![](http://res.cloudinary.com/dkk7qjv7c/image/upload/v1523655684/SignUp-Screen.png)
 
 Then later, when the user attempts to login, the password inputted is passed to BCrypt for validation.
 
---login pic
-
+![](http://res.cloudinary.com/dkk7qjv7c/image/upload/v1523655699/Log-in-good.png)
 
 ### Image Uploading
 The core-gaol for this project is the ability to send and receive information through a third-party api service. This goal is accomplished with the use of Cloudinary, an accessable and free image hosting service. The primary feature of Cloudinary is it's easy to use upload widget:
 
---cloud widget
+![](http://res.cloudinary.com/dkk7qjv7c/image/upload/v1523655690/upload-modal.png)
 
 Once the user has selected their desired image, a flurry of server side actions take place, generating several relational models to provide further features( tags, likes, and extra images). The user is redirected to a creation page that gives them a form for customizing their new gallery.
 
---gallery form
+![](http://res.cloudinary.com/dkk7qjv7c/image/upload/v1523655708/form.png)
 
 Once the user has finished, they can return to edit their gallery at any time, to add additional tags or images.
 
