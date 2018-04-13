@@ -1,26 +1,45 @@
-# README
+# Dungeon Diggur
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Dungeon Diggur is a Dungeons and Dragons themed full-stack Image Uploading service, with user-feedback and organizational functionality. The name comes from a personal place; During my own sessions of D&D I needed an explanation for all the abandoned dungeons littered across the world. The answer: A subrace of Kobolds(little dragon people) that worship the concept of dungeons as a god, and build them as a rite of their religion. They were known as the Dungeon Diggers.
 
-Things you may want to cover:
+Anecdotes aside, this project has had it challenges and triumphs mostly related to the new technology I was introduced to. The core functionality in this project was provided by:
 
-* Ruby version
+* Cloudinary: A cloud storage service that provides the image hosting.
+* React/Redux: A frontend suite of tools that provide a manageable process for async server requests
+* PostgreSQL: An open source relational database system
+* BCrypt: A Ruby Gem that handles password digesting and salting
 
-* System dependencies
+For more information about the details of my implementation for the project's various features visit the wiki(link this m8) or read on for an in-depth look at the core-functionality of Galleries in my website.
 
-* Configuration
+## Features and implementation
+* Secure Frontend/Backend Login
+* Users can Create and Edit Galleries of Images
+* Users can Click a Galleries tags to see similar galleries
+* Users can Upvote/Downvote a Gallery
 
-* Database creation
+### Account Creation
+An important part of any modern website is the ability to track and store the data your users submit, in a way that respects their privacy and security. Using a hashing gem known as BCrypt, my database in no way stores the actual password in the servers, rather it is momentarily received before the BCrypt gem produces a hashed string that is then stored in the passwords place.
 
-* Database initialization
+--sign up pic
 
-* How to run the test suite
+Then later, when the user attempts to login, the password inputted is passed to BCrypt for validation.
 
-* Services (job queues, cache servers, search engines, etc.)
+--login pic
 
-* Deployment instructions
 
-* ...
+### Image Uploading
+The core-gaol for this project is the ability to send and receive information through a third-party api service. This goal is accomplished with the use of Cloudinary, an accessable and free image hosting service. The primary feature of Cloudinary is it's easy to use upload widget:
 
-Making a change to readme for git
+--cloud widget
+
+Once the user has selected their desired image, a flurry of server side actions take place, generating several relational models to provide further features( tags, likes, and extra images). The user is redirected to a creation page that gives them a form for customizing their new gallery.
+
+--gallery form
+
+Once the user has finished, they can return to edit their gallery at any time, to add additional tags or images.
+
+## Future Features
+* Commenting on Galleries
+* Search based on tag
+* D&D Rules Compendium
+* D&D Encounter Creation
