@@ -20,4 +20,11 @@ export const fetchUser = (id) => dispatch => (
   )
 );
 
+export const updateUser = (user) => dispatch => (
+  APIUtil.updateUser(user).then(
+    (upUser) => dispatch(receiveUser(upUser)),
+    (errors) => dispatch(receiveErrors(errors))
+  )
+);
+
 //todo Create fetchSetofUsers

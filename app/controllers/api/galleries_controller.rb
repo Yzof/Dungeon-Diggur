@@ -22,8 +22,7 @@ class Api::GalleriesController < ApplicationController
   def update
     @gallery = Gallery.find(params[:id])
 
-    if @gallery
-      @gallery.update(gallery_params)
+    if @gallery && @gallery.update(gallery_params)
       render "api/gallery/show"
     else
       render json: @gallery.errors.full_messages, status: 422
