@@ -1,5 +1,7 @@
 # Dungeon Diggur
 
+[Live Demo](https://dungeon-diggur.herokuapp.com/#/)
+
 Dungeon Diggur is a Dungeons and Dragons themed full-stack Image Uploading service, with user-feedback and organizational functionality. The name comes from a personal place; During my own sessions of D&D I needed an explanation for all the abandoned dungeons littered across the world. The answer: A subrace of Kobolds(little dragon people) that worship the concept of dungeons as a god, and build them as a rite of their religion. They were known as the Dungeon Diggers.
 
 Anecdotes aside, this project has had it challenges and triumphs mostly related to the new technology I was introduced to. The core functionality in this project was provided by:
