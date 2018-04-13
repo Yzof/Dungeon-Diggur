@@ -41,3 +41,9 @@
 .gallery-form-submit {
   float: right;
 }
+
+.gallery-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
