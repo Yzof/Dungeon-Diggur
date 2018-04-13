@@ -71,13 +71,21 @@ class Vote extends React.Component {
   }
 
   render() {
+    let upArr = <img src={"http://res.cloudinary.com/dkk7qjv7c/image/upload/v1523635561/30180164_1668648299897240_1783406627_n.png"}/>;
+    let dnArr = <img src={"http://res.cloudinary.com/dkk7qjv7c/image/upload/v1523635555/30119056_1668648303230573_1426495899_n.png"}/>;
+
+    if (this.props.gallery.votes.currentUserVote == "up") {
+      upArr = <img src={"http://res.cloudinary.com/dkk7qjv7c/image/upload/v1523635566/30184654_1668648293230574_1988530874_n.png"}/>;
+    } else if (this.props.gallery.votes.currentUserVote == "down") {
+      dnArr = <img src={"http://res.cloudinary.com/dkk7qjv7c/image/upload/v1523635571/30784644_1668648296563907_2109082237_n.png"}/>;
+    }
 
     return (
       <div>
-        <ul className="horizontal-li">
-          <li onClick={this.upVote} className="gallery-vote cursor">up</li>
+        <ul className="horizontal-li center-text">
+          <li onClick={this.upVote} className="gallery-vote cursor">{upArr}</li>
           <li className="gallery-vote count">{this.props.count}</li>
-          <li onClick={this.downVote} className="gallery-vote cursor">dn</li>
+          <li onClick={this.downVote} className="gallery-vote cursor">{dnArr}</li>
         </ul>
       </div>
     );
