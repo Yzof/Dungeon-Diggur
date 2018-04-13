@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const GalleryIndexItem = ({ gallery }) => {
+  console.log("galler item")
   return(
   <li className="main-gallery-item">
     <Link to={`/galleries/${gallery.id}`}>

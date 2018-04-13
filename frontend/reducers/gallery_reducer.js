@@ -13,7 +13,7 @@ const galleryReducer = (oldState = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_ALL_GALLERIES:
-      return merge({}, oldState,  action.galleries);
+      return merge({}, action.galleries);
     case RECEIVE_GALLERY:
       const gallery = action.gallery;
       return merge({}, oldState, { [gallery.id]: gallery });

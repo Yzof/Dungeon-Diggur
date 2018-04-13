@@ -1,12 +1,24 @@
 import React from 'react';
 import GalleryIndexItem from "./gallery_index_item";
 
-class MainGallery extends React.Component {
-  componentWillMount() {
-    this.props.fetchGalleries();
+class TagGallery extends React.Component {
+  constructor(props) {
+    super(props);
   }
 
-  render(){
+  componentWillMount() {
+    this.props.receiveAllGalleries({ galleries: {} });
+  }
+
+  componentDidMount() {
+    this.props.fetchTag(this.props.tag_id);
+  }
+
+  componentWillUnmount() {
+    this.props.receiveAllGalleries({ galleries: {} });
+  }
+
+  render() {
     const galleryItems = this.props.galleries.map(
       (gallery) => (
         gallery.assets[0] ? <GalleryIndexItem key={`gallery-index-item-${gallery.id}`} gallery={gallery} /> : null
@@ -22,4 +34,4 @@ class MainGallery extends React.Component {
   }
 }
 
-export default MainGallery;
+export default TagGallery;

@@ -25,8 +25,8 @@ class GalleryShow extends React.Component {
   componentWillUnmount() {
     $('#main').addClass("main-gallery-container");
     $('#main').removeClass("gallery-show-main-gallery");
+    this.props.receiveAllGalleries({ galleries: {} });
   }
-
 
   nextGallery(e) {
     e.preventDefault();
@@ -51,7 +51,7 @@ class GalleryShow extends React.Component {
   }
 
   render() {
-    let galleryImages = "";
+    let galleryImages, userDetails = "";
 
     if (this.props.gallery) {
       galleryImages = this.props.gallery.assets.map(
@@ -62,6 +62,19 @@ class GalleryShow extends React.Component {
         )
       );
       $('.main-gallery').addClass('gallery-show-main-gallery');
+      if (this.props.user.id === this.props.gallery.author_id) {
+        userDetails = <Link
+                        to={`/galleries/${this.props.gallery.id}/edit`}
+                        >Edit
+                      </Link>;
+      } else {
+        userDetails = <h1>By:
+                        <Link
+                          to={`/user/${this.props.gallery.author_id}`}
+                          >{this.props.gallery.author.username}
+                        </Link>
+                      </h1>;
+      }
     } else {
       return (
         <div className="missing-container">
@@ -74,10 +87,13 @@ class GalleryShow extends React.Component {
       <div className="content">
         <div className="content-left">
           <div className="gallery-show-title">
+            <div className="gallery-name">
             <h1
               key={`title-${this.props.gallery.id}`}
               >{this.props.gallery.title}
             </h1>
+              {userDetails}
+            </div>
             <div>
               <button
                 className="gallery-select-button left-button"

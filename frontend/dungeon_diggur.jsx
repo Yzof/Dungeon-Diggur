@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
-import * as voteActions from './actions/vote_actions';
+import * as tagActions from './actions/tag_actions';
 import { fetchUser } from './actions/user_actions';
-import * as voteUtil from './util/vote_api_util';
+import * as tagUtil from './util/tag_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
   let store;
@@ -19,8 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ------------------ TEST ------------------ */
   window.store = store;
   window.sampleVote = {vote_type: "down", voteable_id: 3, voteable_type:"Gallery", user_id: 1};
-  window.voteActions = voteActions;
-  window.voteUtil = voteUtil;
+  window.fetchTag = tagActions.fetchTag;
+  window.tagUtil = tagUtil;
   window.fetchUser = fetchUser;
   window.dispatch = store.dispatch;
   /* ------------------ TEST ------------------ */

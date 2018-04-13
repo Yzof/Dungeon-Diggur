@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :assets
     resource :vote, except: [:new]
+    resources :tags, only: [:show]
   end
 
   root "static_pages#root"
