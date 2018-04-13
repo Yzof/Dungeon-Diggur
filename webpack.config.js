@@ -44,4 +44,5 @@ module.exports = {
     ]
   },
   devtool: 'source-map',
+  plugins: plugins
 };
