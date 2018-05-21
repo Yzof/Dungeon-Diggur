@@ -10,14 +10,22 @@ class MainGallery extends React.Component {
     // We will need to pass in the class here, then add it in the index item component
     // We are going to need about 7 different classes, space 3 seconds apart
     const classes = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
-
+    let i = 0;
     const galleryItems = this.props.galleries.map(
       (gallery) => {
         // We will find the class in here
         // INcrement an index and key into the classes array
         // We reworked this to reduce line length
+        let index = i % classes.length;
+        let animationClass = classes[index];
+        i++;
+
         if (gallery.assets[0]) {
-          return <GalleryIndexItem key={`gallery-index-item-${gallery.id}`} gallery={gallery} />;
+          return <GalleryIndexItem
+              key={`gallery-index-item-${gallery.id}`}
+              gallery={gallery}
+              animationClass={animationClass}
+            />;
         } else {
           return null;
         }

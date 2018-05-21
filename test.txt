@@ -1,0 +1,7 @@
+tensorflowjs_converter \
+    --input_path='./Desktop/tensorModels/20180402-114759' \
+    --output_path='./Desktop/tensorModels' \
+    --input_format=tf_saved_model \
+    --saved_model_tags=serve \
+    /mobilenet/saved_model \
+    /mobilenet/web_model
