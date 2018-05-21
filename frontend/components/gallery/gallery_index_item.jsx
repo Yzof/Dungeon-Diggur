@@ -6,9 +6,9 @@ const GalleryIndexItem = ({ gallery, animationClass }) => {
   // Randomly select from an array with the different classes?
 
   // We have moved the classes to the parent component
-  console.log(animationClass);
+
   return(
-  <li className="main-gallery-item">
+  <li className={`main-gallery-item ${animationClass}`} >
     <Link to={`/galleries/${gallery.id}`}>
       <img src={gallery.assets[0].path}/>
     </Link>

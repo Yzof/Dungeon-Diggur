@@ -26,6 +26,22 @@
   outline: #121211 solid 1px;
   outline-offset: -3px;
   margin-bottom: 10px;
+  animation:  animation 1.5s linear infinite;
+}
+
+.a { animation-delay: 0s; }
+.b { animation-delay: 0.3s; }
+.c { animation-delay: 0.6s; }
+.d { animation-delay: 0.9; }
+.e { animation-delay: 1.2s; }
+.f { animation-delay: 1.5s; }
+.g { animation-delay: 1.8s; }
+
+
+@keyframes animation {
+    0% { transform: scale(1, 1); }
+    50% { transform: scale(1.05, 1.05); }
+    100% { transform: scale(1, 1); }
 }
 
 .main-gallery-item:hover {
