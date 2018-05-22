@@ -49,7 +49,7 @@ class TagGallery extends React.Component {
     }
     return (
       <div className="main-gallery-container" id="main">
-        <h1 className="tag-name">{tagName}</h1>
+        <h1 className="tag-name">These are the <span className="highlight">{tagName}</span> galleries.</h1>
         <ul className="main-gallery">
           {galleryItems}
         </ul>
