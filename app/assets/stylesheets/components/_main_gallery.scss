@@ -1,9 +1,10 @@
 .main-gallery-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 1000px;
   margin: auto;
   padding: 200px 0px;
+  align-items: center;
 }
 
 .main-gallery {
@@ -46,4 +47,8 @@
 
 .main-gallery-item:hover {
   border: 2px solid  #50545c;
+}
+
+.tag-name {
+  padding-bottom: 10px;
 }

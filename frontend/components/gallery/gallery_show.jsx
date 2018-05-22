@@ -24,6 +24,7 @@ class GalleryShow extends React.Component {
 
   componentWillUnmount() {
     $('#main').addClass("main-gallery-container");
+    $('.main-gallery-container').removeClass('widthless');
     $('#main').removeClass("gallery-show-main-gallery");
     this.props.receiveAllGalleries({ galleries: {} });
   }
@@ -61,6 +62,7 @@ class GalleryShow extends React.Component {
           </li>
         )
       );
+      $('.main-gallery-container').addClass('widthless');
       $('.main-gallery').addClass('gallery-show-main-gallery');
       if (this.props.user.id === this.props.gallery.author_id) {
         userDetails = <Link
